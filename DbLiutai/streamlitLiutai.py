@@ -22,7 +22,7 @@ def embed_images_in_html(html_content, base_folder):
             html_content = html_content.replace(src, img_data_uri)
     return html_content
 
-PATH_HTML_LIUTAI=r"C:\Users\g.ricca\Desktop\DbLiutai\LIUTAI"
+PATH_HTML_LIUTAI="./DbLiutai/LIUTAI"
 
 st.write("Mostra dei Liutai")
 
