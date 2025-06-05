@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <style>
+        .titolo{
+            text-align: center;
+            font-family: cursive;
+            font-size: 1.5rem;
+            color: red;
+        }
+        .tabella{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        table, tr, td, th{
+            border: 1px solid black;
+            border-radius: 10px 10px 10px;
+            padding: 5px 15px;
+            font-size: 20px;
+            max-width: 600px;
+            
+        }
+        table{
+            border: none;
+        }
+        td{
+            background-color: black;
+            text-align: center;
+        }
+        td:hover{
+            background-color: blue;
+            transform: scale(1.2);
+        }
+        tr{
+            color: white;
+            
+        }
+        th:hover{
+            background-color: blue;
+            transform: scale(1.2);
+            
+        }
+        th{
+            background-color: black;
+        }
+
+    </style>
+    <body>
+        <p class="titolo">Claudio Ricca</p><br>
+        <div class="tabella">
+            <table>
+                <tr>
+                    <th>Nome Liutaio</th>
+                    <th>Cognome Liutaio</th>
+                    <th>Data Nascita</th>
+                    <th>Luogo Nascita</th>
+                    <th>Data Morte</th>
+                </tr>
+                <tr>
+                    <td>Claudio</td>
+                    <td>Ricca</td>
+                    <td>1955-05-06</td>
+                    <td>Roma</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
