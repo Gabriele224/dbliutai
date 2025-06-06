@@ -58,7 +58,7 @@ display_names = [os.path.splitext(f)[0] for f in html_pages_strumenti]
 
 box_html_strumento= st.selectbox("Seleziona il Liutaio\n", display_names,key="strumenti")
 
-if st.button("Ricerca Strumento", box_html_strumento):
+if st.button("Ricerca Strumento", box_html_strumento,key="boxstrumenti"):
 
     # Ricostruisci il nome completo del file
     selected_file = box_html_strumento + ".html"
