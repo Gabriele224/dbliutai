@@ -36,10 +36,16 @@
         p{
             font-family: cursive;
         }
-        .descrizione{
-            position:absolute;
+        .card {
+            position: relative;
+            width: 220px;
+            display: inline-block;
+        }
+        
+        .card .descrizione {
+            position: absolute;
             bottom: 0;
-            background: black; /* sfondo semi-trasparente */
+            background: rgba(0, 0, 0, 0.6);
             color: white;
             width: 100%;
             text-align: center;
@@ -47,7 +53,13 @@
             opacity: 0;
             transition: opacity 0.3s ease;
             font-weight: bold;
+            border-radius: 0 0 15px 15px;
         }
+        
+        .card:hover .descrizione {
+            opacity: 1;
+        }
+
     </style>
     <body>
         <p class="titolo">Claudio Ricca</p><br>
@@ -61,10 +73,13 @@
         <br><br>
         <div>
            <h3>Violino  copia scuola Romana anni 50'</h3>
-            <a href="#violino">
-            <img class="violinoromano" src="./static/claudioricca19550506/violinoscuolaromanacopia/violinocopiaromana1.png" alt="violino copia scuola romana anni'50"
-            title="violino copia scuola romana anni'50"><p class="descrizione">Violino romano</p>
-            </a>
+            <div class="card">
+                <a href="#violino">
+                <img class="violinoromano" src="./static/claudioricca19550506/violinoscuolaromanacopia/violinocopiaromana1.png" 
+                alt="violino copia scuola romana anni'50" title="violino copia scuola romana anni'50">
+                <div class="descrizione">Violino romano</div>
+        </a>
+    </div>
         </div>
     </body>
 </html>
