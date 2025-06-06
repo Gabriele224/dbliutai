@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 from PIL import Image
 import base64 ,re
 
-st.title("Benvenuti nella Liuteria Ricca")
+st.title("Benvenuti nella Liuteria")
 
 def encode_image_to_base64(img_path):
     with open(img_path, "rb") as image_file:
@@ -24,7 +24,9 @@ def embed_images_in_html(html_content, base_folder):
 
 PATH_HTML_LIUTAI="./DbLiutai/LIUTAI"
 
-st.write("Mostra dei Liutai")
+PATH_HTML_STRUMENTI="./DbLiutai/STRUMENTILIUTAI"
+
+st.write("Storia dei Liutai")
 
 html_pages_liutai = [file for file in os.listdir(PATH_HTML_LIUTAI) if file.endswith(".html")]
 
@@ -43,6 +45,29 @@ if st.button("Ricerca Liutaio", box_html_liutai):
 
         contenuto= file.read()
     contenuto = embed_images_in_html(contenuto, PATH_HTML_LIUTAI)
+    components.html(contenuto, height=600, scrolling=True)
+else:
+    st.write("\n")
+
+st.write("Mostra dei Strumenti")
+
+html_pages_strumenti = [file for file in os.listdir(PATH_HTML_STRUMENTI) if file.endswith(".html")]
+
+# Mostra nel menu solo il nome senza estensione
+display_names = [os.path.splitext(f)[0] for f in html_pages_strumenti]
+
+box_html_strumento= st.selectbox("Seleziona il Liutaio\n", display_names)
+
+if st.button("Ricerca Strumento", box_html_strumento):
+
+    # Ricostruisci il nome completo del file
+    selected_file = box_html_strumento + ".html"
+
+    file_path= os.path.join(PATH_HTML_STRUMENTI,selected_file)
+    with open(file_path, "r+", encoding="utf-8") as file:
+
+        contenuto= file.read()
+    contenuto = embed_images_in_html(contenuto, PATH_HTML_STRUMENTI)
     components.html(contenuto, height=600, scrolling=True)
 else:
     st.write("\n")
