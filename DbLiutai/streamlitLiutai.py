@@ -56,7 +56,7 @@ html_pages_strumenti = [file for file in os.listdir(PATH_HTML_STRUMENTI) if file
 # Mostra nel menu solo il nome senza estensione
 display_names = [os.path.splitext(f)[0] for f in html_pages_strumenti]
 
-box_html_strumento= st.selectbox("Seleziona il Liutaio\n", display_names,id="strumenti")
+box_html_strumento= st.selectbox("Seleziona il Liutaio\n", display_names,name="strumenti")
 
 if st.button("Ricerca Strumento", box_html_strumento):
 
