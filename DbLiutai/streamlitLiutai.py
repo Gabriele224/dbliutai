@@ -22,7 +22,7 @@ def embed_images_in_html(html_content, base_folder):
             html_content = html_content.replace(src, img_data_uri)
     return html_content
 
-PATH_HTML_LIUTAI="./DbLiutai/LIUTAI"
+PATH_HTML_LIUTAI=r"C:\Users\g.ricca\Desktop\DbLiutai\LIUTAI"
 
 st.write("Mostra dei Liutai")
 
@@ -42,7 +42,7 @@ if st.button("Ricerca Liutaio", box_html_liutai):
     with open(file_path, "r+", encoding="utf-8") as file:
 
         contenuto= file.read()
-
+    contenuto = embed_images_in_html(contenuto, PATH_HTML_LIUTAI)
     components.html(contenuto, height=600, scrolling=True)
 else:
     st.write("\n")
